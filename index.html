@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="website">
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -8,7 +8,7 @@
         <link href="css/style.css" rel="stylesheet" type="text/css"/>
         <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light|Open+Sans:400,300,700' rel='stylesheet' type='text/css'/>
     </head>
-    <body>
+    <body ng-controller="DateController as date">
         <header>
             <div class="container">
                 <div class="row">
@@ -25,7 +25,7 @@
                 </div>
                 <div class="col-md-8">
                     <h1>Chi sono</h1>
-                    <p>Ciao! Sono Matteo, ho 25 anni, vivo a <a href="https://goo.gl/maps/CvQUw" target="_blank">Conselve</a> e studio Informatica presso il Dipartimento di Matematica Pura ed Applicata all'Università degli Studi di Padova.</p>
+                    <p>Ciao! Sono Matteo, ho {{date.myAge}} anni, vivo a <a href="https://goo.gl/maps/CvQUw" target="_blank">Conselve</a> e studio Informatica presso il Dipartimento di Matematica Pura ed Applicata all'Università degli Studi di Padova.</p>
                     <h1>Per conoscermi meglio</h1>
                     <p>Il mio profilo su GitHub (<a href="https://github.com/mzilio/" target="_blank">@mzilio</a>) può aiutare a farvi capire su cosa e come lavoro.</p>
                     <h1>Contatti</h1>
@@ -36,12 +36,14 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <p class="text-center">Copyright &copy; 2014 Matteo Zilio - Tutti i diritti riservati.</p>
+                        <p class="text-center">Copyright &copy; {{date.yearNow}} Matteo Zilio - Tutti i diritti riservati.</p>
                     </div>
                 </div>
             </div>
         </footer>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/angular.min.js"></script>
+        <script src="js/app.js"></script>
     </body>
 </html>
